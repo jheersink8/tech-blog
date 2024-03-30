@@ -28,11 +28,11 @@ const sess = {
 app.use(session(sess));
 
 // -------------------------------------------
-app.engine('handlebars', exphbs());
-app.use(express.static('views'));
-app.get('/', (req, res) => {
-    res.render('main.handlebars', { title: 'Home' });
-});
+// app.engine('handlebars', exphbs());
+// app.use(express.static('views'));
+// app.get('/', (req, res) => {
+//     res.render('main.handlebars', { title: 'Home' });
+// });
 // -------------------------------------------
 
 app.engine('handlebars', hbs.engine);
@@ -43,7 +43,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use(routes);
+app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`Now listening on port ${PORT}!`));
