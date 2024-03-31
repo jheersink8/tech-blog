@@ -4,6 +4,7 @@ const confirmAuth = require('../utils/auth')
 
 // Route for homepage nav link which renders all blogs in a list
 router.get('/', async (req, res) => {
+
     try {
         const blogData = await Blog.findAll({
             order: [['date', 'DESC']],
@@ -18,8 +19,10 @@ router.get('/', async (req, res) => {
         const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
         res.render('homepage', {
-            blogs
+            blogs,
+            logged_in: req.session.logged_in
         });
+
 
     } catch (err) {
         res.status(500).json(err);
@@ -51,8 +54,8 @@ router.get('/blog/:id', confirmAuth, async (req, res) => {
         const blog = blogData.get({ plain: true });
 
         res.render('blog', {
-            ...blog
-            // ADD LOGGED IN LOGIC LATER
+            ...blog,
+            logged_in: req.session.logged_in
         });
     } catch (err) {
         res.status(500).json(err);
@@ -61,12 +64,12 @@ router.get('/blog/:id', confirmAuth, async (req, res) => {
 
 // Route for dashboard nav link
 router.get('/dashboard', confirmAuth, async (req, res) => {
-    res.render('dashboard');
+    res.render('dashboard', { logged_in: req.session.logged_in });
 });
 
 // Route for new post from dashboard
 router.get('/dashboard/newPost', confirmAuth, async (req, res) => {
-    res.render('newPost');
+    res.render('newPost', { logged_in: req.session.logged_in });
 });
 
 // Route for login nav link (if not already logged in)
