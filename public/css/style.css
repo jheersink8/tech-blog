@@ -23,7 +23,7 @@
 .standard-button {
     text-align: center;
     background-color: var(--accent-background);
-    padding: 1%;
+    padding: 10%;
     border: 2px solid var(--border);
     font-size: x-large;
 }
@@ -158,4 +158,43 @@ footer {
 
 .signature {
     font-style: italic;
+}
+
+/* --------------- Login Page --------------- */
+.input-fields {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--accent-background);
+    border: 4px solid var(--border);
+    border-radius: 9px;
+    margin: 4% 30% 0% 30%;
+}
+
+.input-field {
+    background-color: var(--accent-background);
+    font-size: xx-large;
+    margin: 2%;
+}
+
+.input-field label {
+    background-color: var(--accent-background);
+}
+
+.input-form {
+    font-size: x-large;
+    padding: 5px;
+    background-color: whitesmoke;
+}
+
+.signup {
+    font-size: xx-large;
+    color: var(--font);
+    text-align: center;
+}
+
+.signup-link {
+    text-decoration: underline;
 }

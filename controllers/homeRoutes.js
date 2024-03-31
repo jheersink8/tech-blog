@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Blog, User, Comment } = require('../models');
+const confirmAuth = require('../utils/auth')
 
 // Route for homepage nav link which renders all blogs in a list
 router.get('/', async (req, res) => {
@@ -26,7 +27,7 @@ router.get('/', async (req, res) => {
 });
 
 // Route for a single blog post with comments section
-router.get('/blog/:id', async (req, res) => {
+router.get('/blog/:id', confirmAuth, async (req, res) => {
     try {
         const blogData = await Blog.findByPk(req.params.id, {
             include: [
@@ -59,17 +60,22 @@ router.get('/blog/:id', async (req, res) => {
 });
 
 // Route for dashboard nav link
-router.get('/dashboard', (req, res) => {
+router.get('/dashboard', confirmAuth, async (req, res) => {
     res.render('dashboard');
 });
 
 // Route for new post from dashboard
-router.get('/dashboard/newPost', (req, res) => {
+router.get('/dashboard/newPost', confirmAuth, async (req, res) => {
     res.render('newPost');
 });
 
-// Route for login nav link
+// Route for login nav link (if not already logged in)
 router.get('/login', (req, res) => {
+    if (req.session.logged_in) {
+        res.redirect('/dashboard');
+        return;
+    }
+
     res.render('login');
 });
 
