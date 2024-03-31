@@ -1,16 +1,15 @@
-// Validate username and password to database 
-const loginForm = async (event) => {
+// Add username and password from signup form to database
+const signupForm = async (event) => {
     event.preventDefault();
-    const username = document.querySelector('#username').value.trim();
-    const password = document.querySelector('#password').value.trim();
 
+    const username = document.querySelector('#createUsername').value.trim();
+    const password = document.querySelector('#createPassword').value.trim();
     if (username && password) {
-        const response = await fetch('/api/user/login', {
+        const response = await fetch('/api/user', {
             method: 'POST',
             body: JSON.stringify({ username, password }),
             headers: { 'Content-Type': 'application/json' },
         });
-
         const responseData = await response.json();
         if (response.ok) {
             document.location.replace('/dashboard');
@@ -20,5 +19,4 @@ const loginForm = async (event) => {
     }
 };
 
-document.querySelector('.login-form').addEventListener('submit', loginForm);
-
+document.querySelector('.signup-form').addEventListener('submit', signupForm);

@@ -1,5 +1,27 @@
-    <div>
-        <p>Clicked Signup</p>
-    </div>
+<div>
 
-<button><a href="/dashboard">Create Account</a></button>
+    <form class="signup-form">
+
+        <div class="input-fields">
+            <h2>Create a username and password below:</h2>
+            <div class="input-field">
+                {{!-- Create username field --}}
+                <label for="username-create">Username:</label>
+                <input class="input-form" type="text" id="createUsername" />
+            </div>
+
+            <div class="input-field">
+                {{!-- Create password field --}}
+                <label for="password-create">Password:</label>
+                <input class="input-form" type="password" id="createPassword" />
+            </div>
+        </div>
+        <div class="button-container">
+            {{!-- Create button --}}
+            <a href="/dashboard"><button class="standard-button" type="submit">Create Account</button></a>
+        </div>
+    </form>
+</div>
+
+
+<script src="./js/signup.js"></script>
