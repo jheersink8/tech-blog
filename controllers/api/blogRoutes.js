@@ -1,8 +1,11 @@
 // const router = require('express').Router();
 // const { Blog } = require('../../models');
 
-// router.get('/', async (req, res) => {
-//     res.render('all');
-// });
+// Create a new blog
+
+
+// Update a blog
+
+// Delete a blog
 
 // module.exports = router;

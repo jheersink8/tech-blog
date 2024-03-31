@@ -4,7 +4,7 @@ const { Comment } = require('../models');
 const commentData = [
     {
         "content": "Great blog post!",
-        "date": "2024-03-27",
+        "date": "2024-03-28",
         "user_id": 5,
         "blog_id": 1
     },
@@ -16,7 +16,7 @@ const commentData = [
     },
     {
         "content": "I found this very helpful.",
-        "date": "2024-03-27",
+        "date": "2024-03-29",
         "user_id": 18,
         "blog_id": 1
     },

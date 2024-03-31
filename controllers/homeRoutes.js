@@ -1,4 +1,3 @@
-
 const router = require('express').Router();
 const { Blog, User, Comment } = require('../models');
 
@@ -6,6 +5,7 @@ const { Blog, User, Comment } = require('../models');
 router.get('/', async (req, res) => {
     try {
         const blogData = await Blog.findAll({
+            order: [['date', 'DESC']],
             include: [
                 {
                     model: User,
@@ -37,16 +37,18 @@ router.get('/blog/:id', async (req, res) => {
                 {
                     model: Comment,
                     attributes: ['content', 'date'],
+                    order: [['date', 'DESC']],
                     include: [
                         {
                             model: User,
                             attributes: ['username']
                         }
-                    ]
+                    ],
+
                 }],
         });
         const blog = blogData.get({ plain: true });
- 
+
         res.render('blog', {
             ...blog
             // ADD LOGGED IN LOGIC LATER
@@ -54,8 +56,7 @@ router.get('/blog/:id', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-})
-
+});
 
 // Route for dashboard nav link
 router.get('/dashboard', (req, res) => {
