@@ -9,7 +9,23 @@
 * {
     font-family: "Nunito Sans", sans-serif;
     background-color: var(--main-background);
-    color: var(--font)
+    color: var(--font);
+    text-decoration: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3%;
+}
+
+.standard-button {
+    text-align: center;
+    background-color: var(--accent-background);
+    padding: 1%;
+    border: 2px solid var(--border);
+    font-size: x-large;
 }
 
 /* --------------- Nav bar content --------------- */
@@ -32,7 +48,7 @@ nav {
     background-color: var(--accent-background);
 }
 
-.navlink{
+.navlink {
     font-size: 30px;
     background-color: var(--accent-background);
 }
@@ -40,6 +56,7 @@ nav {
 .nav-list {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap-reverse;
     list-style: none;
     line-height: 1;
@@ -49,12 +66,13 @@ nav {
 .navlink-group {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     min-width: 70vw;
     list-style: none;
     background-color: var(--accent-background);
 }
 
-.navlink-div{
+.navlink-div {
     background-color: var(--accent-background);
 }
 
@@ -86,4 +104,58 @@ footer {
     background-color: var(--accent-background);
 }
 
-/* --------------- Dashboard content --------------- */
+/* --------------- Dashboard Content --------------- */
+.content-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--accent-background);
+    border: 4px solid var(--border);
+    border-radius: 9px;
+    margin: 2% 12% 2% 12%;
+}
+
+.content-list h2,
+.content-list h3 {
+    background-color: var(--accent-background);
+}
+
+.content-list h3 span {
+    font-weight: 900;
+    background-color: var(--accent-background);
+}
+
+
+/* --------------- Single Blog Content --------------- */
+
+.blog-post {
+    background-color: var(--accent-background);
+    border: 4px solid var(--border);
+    border-radius: 9px;
+    margin: 2% 12% 2% 12%;
+}
+
+.content-section p {
+    background-color: var(--accent-background);
+    font-size: x-large;
+    padding: 1% 6% 1% 6%;
+}
+
+.comment-section {
+    text-align: center;
+    font-size: xx-large;
+}
+
+.comment-list {
+    flex-direction: column;
+    margin: 2% 17% 2% 17%;
+}
+
+.comment {
+    background-color: var(--accent-background);
+}
+
+.signature {
+    font-style: italic;
+}

@@ -1,0 +1,25 @@
+<div class="blog-post">
+    <section class="content-list">
+        <h2>{{title}}</h2>
+        <h3>created by <span>{{user.username}}</span> on <span>{{format_date date}}</span></h3>
+    </section>
+    <section class="content-section">
+        <p>{{content}}</p>
+    </section>
+</div>
+
+<h4 class="comment-section">Comments Section</h4>
+
+{{#each comments}}
+<div>
+    <section class="content-list comment-list">
+        <p class="comment">{{content}}</p>
+        <p class="comment signature">-{{user.username}} on {{format_date date}}</p>
+    </section>
+</div>
+{{/each}}
+
+<div class="button-container">
+    {{!-- ADD POST CONTENT --}}
+    <a href="#"><button class="standard-button">Submit Comment</button></a>
+</div>
