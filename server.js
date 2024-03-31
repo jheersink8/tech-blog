@@ -19,8 +19,12 @@ const hbs = exphbs.create({ helpers });
 const sess = {
     secret: 'Session cookie secrets',
     cookie: {
+        // Production time
         // maxAge: 300000,
-        maxAge: 10000,
+
+        // Testing time
+        maxAge: 100000000,
+
         httpOnly: true,
         secure: false,
         sameSite: 'strict',
@@ -33,12 +37,6 @@ const sess = {
 };
 app.use(session(sess));
 
-// -------------------------------------------
-// app.engine('handlebars', exphbs());
-// app.use(express.static('views'));
-// app.get('/', (req, res) => {
-//     res.render('main.handlebars', { title: 'Home' });
-// });
 // -------------------------------------------
 
 app.engine('handlebars', hbs.engine);

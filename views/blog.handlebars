@@ -19,7 +19,19 @@
 </div>
 {{/each}}
 
-<div class="button-container">
-    {{!-- ADD POST CONTENT --}}
-    <a href="/blog/{{id}}"><button class="standard-button">Submit Comment</button></a>
+<div>
+    <form class="comment-form">
+        <div class="comment-field">
+            <label for="comment-input">Add your comment here:</label>
+            <textarea class="comment-input-form" rows="5" placeholder="Remember to keep the conversation civil!"
+                id="comment"></textarea>
+        </div>
+
+        <div class="button-container">
+            <button class="standard-button" data-blogid="{{id}}">Submit Comment</button>
+        </div>
+    </form>
 </div>
+
+
+<script src="/js/comment.js"></script>

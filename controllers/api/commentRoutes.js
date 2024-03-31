@@ -1,28 +1,26 @@
-const router = require('express').Router();
-const { Comment } = require('../../models');
-
-// Test Route
-router.get('/', async (req, res) => {
-    try {
-        const commentData = await Comment.findAll();
-        res.status(200).json(commentData);
-    } catch (err) {
-        res.status(500).json(err);
-    }
-})
-
-// Add a new comment
-router.post('/', async (req, res) => {
-    try {
-        const newPost = await Comment.create({
-            ...req.body
-        });
-
-        res.status(200).json(newPost)
-    } catch (err) {
-        res.status(400).json(err);
-    }
-})
+// DELETE THIS IF THE OTHER ROUTE WORKS!!!!!!!!
 
 
-module.exports = router;
+// const router = require('express').Router();
+// const { Comment } = require('../../models');
+
+// // Add a new comment
+// router.post('/blog/:id', async (req, res) => {
+//     try {
+//         const currentDate = new Date();
+
+//         const newPost = await Comment.create({
+//             ...req.body,
+//             date: currentDate,
+//             user_id: req.session.user_id,
+//             blog_id: req.params.id,
+//         });
+
+//         res.status(200).json(newPost)
+//     } catch (err) {
+//         res.status(400).json(err);
+//     }
+// });
+
+
+// module.exports = router;
