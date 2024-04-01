@@ -20,10 +20,10 @@ const sess = {
     secret: 'Session cookie secrets',
     cookie: {
         // Production time
-        // maxAge: 300000,
+        maxAge: 300000,
 
         // Testing time
-        maxAge: 100000000,
+        // maxAge: 100000000,
 
         httpOnly: true,
         secure: false,

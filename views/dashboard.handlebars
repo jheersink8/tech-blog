@@ -1,5 +1,14 @@
+{{#each blogs}}
 <div>
-    <p>Clicked DASHBOARD</p>
+    <a class="content-list" href="/blog/{{id}}">
+        {{!-- BLOG TITLE --}}
+        <h2>{{title}}</h2>
+        {{!-- DATE --}}
+        <h3>Originally created on {{format_date date}}</h3>
+    </a>
 </div>
+{{/each}}
 
-<button><a class="new-post-button" href="/dashboard/newPost">+ New Post</a></button>
+<div class="button-container">
+    <a class="new-post-button" href="/dashboard/newPost"><button class="standard-button">+ New Post</button></a>
+</div>

@@ -226,3 +226,16 @@ footer {
 .input-fields h2 {
     background-color: var(--accent-background);
 }
+
+
+/* --------------- New Blog Post Page --------------- */
+.blog-input-fields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--accent-background);
+    border: 4px solid var(--border);
+    border-radius: 9px;
+    margin: 4% 5% 0% 5%;
+}

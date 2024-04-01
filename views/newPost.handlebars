@@ -1,10 +1,22 @@
-    <div>
-        <p>Clicked NEW POST</p>
-    </div>
+<div>
+    <form class="new-blog-form">
+        <div class="blog-input-fields">
+            <div class="input-field">
+                {{!-- Title Field --}}
+                <label for="new-blog-title">Title:</label>
+                <input class="input-form" type="text" id="new-title" />
+            </div>
 
+            <div class="input-field">
+                {{!-- Content field --}}
+                <label for="new-blog-content">Body:</label>
+                <textarea class="comment-input-form" rows="5" placeholder="Enter content here" id="new-content"></textarea>
+            </div>
+        </div>
 
-    <div>
-        <button>
-            <a href="/dashboard">Create Post</a>
-        </button>
-    </div>
+        <div class="button-container">
+            {{!-- Submit button --}}
+            <a href="/dashboard"><button class="standard-button" type="submit">Create Post</button></a>
+        </div>
+    </form>
+</div>
