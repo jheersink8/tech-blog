@@ -87,7 +87,19 @@ router.get('/dashboard/newPost', confirmAuth, async (req, res) => {
 });
 
 // Route for edit/delete post from dashboard view
+router.get('/dashboard/blog/:id', confirmAuth, async (req, res) => {
+    try {
+        const blogData = await Blog.findByPk(req.params.id)
+        const blog = blogData.get({ plain: true });
 
+        res.render('updatePost', {
+            ...blog,
+            logged_in: req.session.logged_in
+        })
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 // Route for login nav link (if not already logged in)
 router.get('/login', (req, res) => {

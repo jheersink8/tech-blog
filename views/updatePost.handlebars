@@ -1,0 +1,34 @@
+<div>
+    <form class="new-blog-form">
+        <div class="blog-input-fields">
+            <div class="input-field">
+                {{!-- Title Field --}}
+                <label for="new-blog-title">Title:</label>
+                <input class="input-form" type="text" id="update-title" />
+            </div>
+
+            <div class="input-field">
+                {{!-- Content field --}}
+                <label for="new-blog-content">Body:</label>
+                <textarea class="comment-input-form" rows="5" placeholder="Enter content here"
+                    id="update-content"></textarea>
+            </div>
+        </div>
+
+        <div class="button-container">
+            {{!-- Submit button --}}
+            <a href="/dashboard"><button class="standard-button" type="submit">Update This Blog</button></a>
+        </div>
+    </form>
+
+    <div class="button-container">
+        {{!-- Delete button --}}
+        {{!-- href="/dashboard" --}}
+        <a href="#"><button class="standard-button" id="delete-blog-button" data-blogid="{{id}}">Delete This
+                Blog</button></a>
+    </div>
+
+</div>
+
+
+<script src="/js/updateDelete.js"></script>
