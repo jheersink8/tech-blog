@@ -1,4 +1,4 @@
-// Set up routes for blog, comment, and user
+// Set up routes for blog, and user
 const router = require('express').Router();
 
 const blogRoutes = require('./blogRoutes');

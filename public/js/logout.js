@@ -1,3 +1,4 @@
+// Server side js to log user out
 const logout = async () => {
     const response = await fetch('/api/user/logout', {
         method: 'POST',

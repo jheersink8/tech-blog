@@ -1,3 +1,4 @@
+// Local side JS to contact server side API and add new comment
 const newComment = async (event) => {
     event.preventDefault();
     const id = event.target.elements[1].getAttribute('data-blogid');

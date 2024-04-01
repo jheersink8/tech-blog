@@ -2,6 +2,10 @@ const router = require('express').Router();
 const { Blog, User, Comment } = require('../models');
 const confirmAuth = require('../utils/auth')
 
+router.get(async (req, res) => {
+    
+})
+
 // Route for homepage nav link which renders all blogs in a list
 router.get('/', async (req, res) => {
 
