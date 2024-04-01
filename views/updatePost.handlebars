@@ -4,14 +4,13 @@
             <div class="input-field">
                 {{!-- Title Field --}}
                 <label for="new-blog-title">Title:</label>
-                <input class="input-form" type="text" id="update-title" />
+                <input class="input-form" type="text" id="update-title" value="{{title}}"/>
             </div>
 
             <div class="input-field">
                 {{!-- Content field --}}
                 <label for="new-blog-content">Body:</label>
-                <textarea class="comment-input-form" rows="5" placeholder="Enter content here"
-                    id="update-content"></textarea>
+                <textarea class="comment-input-form" rows="5" id="update-content">{{content}}</textarea>
             </div>
         </div>
 
