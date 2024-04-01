@@ -1,5 +1,5 @@
 <div>
-    <form class="new-blog-form">
+    <form class="update-blog-form">
         <div class="blog-input-fields">
             <div class="input-field">
                 {{!-- Title Field --}}
@@ -16,7 +16,7 @@
 
         <div class="button-container">
             {{!-- Submit button --}}
-            <a href="/dashboard"><button class="standard-button" type="submit">Update This Blog</button></a>
+            <a href="/dashboard"><button class="standard-button" type="submit" data-blogid="{{id}}">Update This Blog</button></a>
         </div>
     </form>
 

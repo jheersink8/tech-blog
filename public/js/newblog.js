@@ -1,3 +1,4 @@
+// Local side JS to contact server side API and add new blog
 const newBlog = async (event) => {
     event.preventDefault();
 
