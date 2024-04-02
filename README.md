@@ -1,7 +1,7 @@
 # Read Tech Today!
 GitHub Repo: https://github.com/jheersink8/tech-blog
 
-Deployed Site: 
+Deployed Site: https://read-tech-today.onrender.com/ 
 
 ## Installation 
 This appication is fully deployed to the Render and does not require installation. 
